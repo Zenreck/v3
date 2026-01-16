@@ -25,6 +25,27 @@
 
       gtag('config', 'G-43Q4DLBWP2');
     </script>
+
+<script>
+  let started = false;
+
+  function startMusic() {
+    if (started) return;
+
+    const iframe = document.getElementById("ytMusic");
+    iframe.contentWindow.postMessage(
+      '{"event":"command","func":"playVideo","args":""}',
+      '*'
+    );
+
+    started = true;
+  }
+
+  document.addEventListener("click", startMusic);
+  document.addEventListener("keydown", startMusic);
+</script>
+
+     
 <body>
     <div id="roddyrichheshomebox">
         <div id="main">
